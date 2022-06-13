@@ -4,13 +4,19 @@ import Homepage from "./Homepage";
 import LeetcodePage from "./LeetcodePage";
 import { BrowserRouter as Router, Route, Link, Redirect, Routes} from "react-router-dom"; 
 
+const linkStyle = {
+    margin: "1rem",
+    textDecoration: "none",
+    color: 'white'
+  };
+
 function App(){
     return(
     <Router>
-        <nav>
-            <Link to = ''> Home </Link>
-            <Link to = '/Leetcode'> LeetCode </Link>
-        </nav>
+        <ul>
+            <li><Link to = '' style={linkStyle}> Home </Link></li>
+            <li><Link to = '/Leetcode'  style={linkStyle}> LeetCode </Link></li>
+        </ul>
         <Routes>
             <Route path='' element = {<Homepage/>}/>
             <Route path='/Leetcode' element={<LeetcodePage/>}/>
